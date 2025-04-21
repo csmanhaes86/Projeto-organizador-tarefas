@@ -1,14 +1,12 @@
+import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
 function App() {
-  const list = [
-    { id: uuid(), task: "Estudar pela manha" },
-    { id: uuid(), task: "Revisar os exercícios" },
-  ];
+  const [list, setList] = useState([{ id: uuid(), task: "Nada" }]);
 
   function digiteiNoInput(event) {
     console.log(event.target.value);
-    list.push({ id: uuid(), task: event.target.value });
+    setList([{ id: uuid(), task: event.target.value }]);
 
     console.log(list);
   }
