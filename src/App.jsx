@@ -3,21 +3,19 @@ import { v4 as uuid } from "uuid";
 
 function App() {
   const [list, setList] = useState([{ id: uuid(), task: "Nada" }]);
+  const [inputTask, setInputTask] = useState(" ");
 
-  function digiteiNoInput(event) {
-    console.log(event.target.value);
-    setList([{ id: uuid(), task: event.target.value }]);
-
-    console.log(list);
+  function inputMudou(event) {
+    setInputTask(event.target.value);
   }
 
   function cliqueiNoBotao() {
-    console.log("Cliquei no Botão");
+    setList([...list,{ id: uuid(), task: inputTask }]);
   }
 
   return (
     <div>
-      <input onChange={digiteiNoInput} placeholder="O que tem pra fazer ..." />
+      <input onChange={inputMudou} placeholder="O que tem pra fazer ..." />
       <button onClick={cliqueiNoBotao}>Adicionar</button>
 
       <ul>
