@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
-import { Container, ToDoList } from "./styles";
+
+import { FcCheckmark, FcEmptyTrash } from "react-icons/fc";
+
+import { Button, Container, Input, ListItem, ToDoList } from "./styles";
 
 function App() {
   const [list, setList] = useState([{ id: uuid(), task: "Nada" }]);
@@ -17,12 +20,16 @@ function App() {
   return (
     <Container>
       <ToDoList>
-        <input onChange={inputMudou} placeholder="O que tem pra fazer ..." />
-        <button onClick={cliqueiNoBotao}>Adicionar</button>
+        <Input onChange={inputMudou} placeholder="O que tem pra fazer ..." />
+        <Button onClick={cliqueiNoBotao}>Adicionar</Button>
 
         <ul>
           {list.map((item) => (
-            <li key={item.id}>{item.task}</li>
+            <ListItem>
+              <FcCheckmark />
+              <li key={item.id}>{item.task}</li>
+              <FcEmptyTrash />
+            </ListItem>
           ))}
         </ul>
       </ToDoList>
