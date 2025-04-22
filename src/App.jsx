@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { Container, ToDoList } from "./styles";
 
 function App() {
   const [list, setList] = useState([{ id: uuid(), task: "Nada" }]);
@@ -10,20 +11,22 @@ function App() {
   }
 
   function cliqueiNoBotao() {
-    setList([...list,{ id: uuid(), task: inputTask }]);
+    setList([...list, { id: uuid(), task: inputTask }]);
   }
 
   return (
-    <div>
-      <input onChange={inputMudou} placeholder="O que tem pra fazer ..." />
-      <button onClick={cliqueiNoBotao}>Adicionar</button>
+    <Container>
+      <ToDoList>
+        <input onChange={inputMudou} placeholder="O que tem pra fazer ..." />
+        <button onClick={cliqueiNoBotao}>Adicionar</button>
 
-      <ul>
-        {list.map((item) => (
-          <li key={item.id}>{item.task}</li>
-        ))}
-      </ul>
-    </div>
+        <ul>
+          {list.map((item) => (
+            <li key={item.id}>{item.task}</li>
+          ))}
+        </ul>
+      </ToDoList>
+    </Container>
   );
 }
 export default App;
