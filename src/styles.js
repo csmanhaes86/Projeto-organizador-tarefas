@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { FcCheckmark, FcEmptyTrash } from "react-icons/fc";
+
 export const Container = styled.div`
   background: linear-gradient(90deg, #383838 0%, #000000 81.25%);
   width: 100vw;
@@ -7,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
 `;
 
 export const ToDoList = styled.div`
@@ -17,6 +20,14 @@ export const ToDoList = styled.div`
   ul {
     padding: 0;
     margin-top: 60px;
+
+    h3 {
+      display: flex;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 40px;
+      color:rgb(231, 71, 65);
+    }
   }
 `;
 
@@ -38,6 +49,15 @@ export const Button = styled.button`
   font-weight: 900;
   font-size: 17px;
   line-height: 2.5px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 `;
 
 export const ListItem = styled.div`
@@ -55,4 +75,12 @@ export const ListItem = styled.div`
   li {
     list-style: none;
   }
+`;
+
+export const Check = styled(FcCheckmark)`
+  cursor: pointer;
+`;
+
+export const Trash = styled(FcEmptyTrash)`
+  cursor: pointer;
 `;
