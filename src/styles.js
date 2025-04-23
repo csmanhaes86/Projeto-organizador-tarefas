@@ -26,7 +26,6 @@ export const Input = styled.input`
   height: 40px;
   width: 340px;
   margin-right: 40px;
- 
 `;
 
 export const Button = styled.button`
@@ -42,8 +41,8 @@ export const Button = styled.button`
 `;
 
 export const ListItem = styled.div`
+  background: ${(props) => (props.isFinished ? " #E8FF8B;" : "#e4e4e4")};
   box-shadow: 1px 4px 10px 0px #00000033;
-  background: #E4E4E4;
   border-radius: 5px;
   height: 60px;
   width: 500px;
@@ -56,6 +55,4 @@ export const ListItem = styled.div`
   li {
     list-style: none;
   }
-
-
 `;

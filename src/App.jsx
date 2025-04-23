@@ -6,7 +6,9 @@ import { FcCheckmark, FcEmptyTrash } from "react-icons/fc";
 import { Button, Container, Input, ListItem, ToDoList } from "./styles";
 
 function App() {
-  const [list, setList] = useState([{ id: uuid(), task: "Nada" }]);
+  const [list, setList] = useState([
+    { id: uuid(), task: "Nada", finished: true },
+  ]);
   const [inputTask, setInputTask] = useState(" ");
 
   function inputMudou(event) {
@@ -14,7 +16,7 @@ function App() {
   }
 
   function cliqueiNoBotao() {
-    setList([...list, { id: uuid(), task: inputTask }]);
+    setList([...list, { id: uuid(), task: inputTask, finished: false }]);
   }
 
   return (
@@ -25,7 +27,7 @@ function App() {
 
         <ul>
           {list.map((item) => (
-            <ListItem>
+            <ListItem isFinished={item.finished}>
               <FcCheckmark />
               <li key={item.id}>{item.task}</li>
               <FcEmptyTrash />
