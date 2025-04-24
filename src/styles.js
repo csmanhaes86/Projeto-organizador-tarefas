@@ -10,6 +10,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+ 
 `;
 
 export const ToDoList = styled.div`
@@ -26,9 +27,10 @@ export const ToDoList = styled.div`
       justify-content: center;
       font-weight: 900;
       font-size: 40px;
-      color:rgb(231, 71, 65);
+      color: rgb(231, 71, 65);
     }
   }
+
 `;
 
 export const Input = styled.input`
@@ -37,6 +39,13 @@ export const Input = styled.input`
   height: 40px;
   width: 340px;
   margin-right: 40px;
+
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 `;
 
 export const Button = styled.button`
@@ -58,6 +67,10 @@ export const Button = styled.button`
   &:active {
     opacity: 0.6;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const ListItem = styled.div`
@@ -74,6 +87,16 @@ export const ListItem = styled.div`
 
   li {
     list-style: none;
+  }
+
+  @media (max-width: 768px) {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
   }
 `;
 
